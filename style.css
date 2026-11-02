@@ -1,0 +1,15 @@
+:root {
+  --bg: #1d1b3a;
+  --ink: #fff7e8;
+  color-scheme: dark;
+}
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+#stage canvas { display: block; border-radius: 10px; box-shadow: 0 10px 40px rgba(0, 0, 0, .45); }
