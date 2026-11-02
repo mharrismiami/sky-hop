@@ -211,7 +211,7 @@ function draw() {
     drawLeanMeter();
   }
   if (mode === "loading") overlay("SKY HOP", "Loading camera and body tracking…", "Allow camera access if your browser asks.");
-  if (mode === "title") overlay("SKY HOP", "Lean left or right to steer.\nYou bounce on your own.", "Click or press Space to start");
+  if (mode === "title") overlay("SKY HOP", "Steer with your shoulders:\nlean left or right to move.\nYou bounce on your own.", "Click or press Space to start");
   if (mode === "calibrate") drawCalibrate();
   if (mode === "over") overlay(`${score}`, `Best ${best}`, "Click or press Space to play again");
   pop();
