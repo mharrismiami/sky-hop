@@ -164,8 +164,15 @@ function updateGame() {
       if (p.fall > 0) continue;
       const overX = player.x > p.x - 10 && player.x < p.x + PW + 10;
       if (overX && prevBottom <= p.y + 2 && bottom >= p.y) {
-        if (p.type === "crumble") { p.fall = 1; puff(player.x, p.y, color(180, 170, 200)); boing(160); continue; }
         player.y = p.y - player.r;
+        if (p.type === "crumble") {   // one bounce, then it breaks and falls
+          player.vy = JUMP;
+          player.squash = 1;
+          p.fall = 1;
+          puff(player.x, p.y, color(180, 170, 200));
+          boing(200);
+          break;
+        }
         player.vy = p.spring ? SPRING : JUMP;
         player.squash = 1;
         puff(player.x, p.y, color(255));
